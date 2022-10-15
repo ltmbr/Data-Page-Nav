@@ -46,18 +46,21 @@ sub first_nav_page {
     
     return shift @{$self->pages_nav($number_of_pages)} 
         if $number_of_pages || !$self->{_first_nav_page};
+        
     return $self->{_first_nav_page} if $self->{_first_nav_page};
+    
     return;
 }
 
 sub last_nav_page {
     my $self = shift;
-    
     my $number_of_pages = shift;
     
     return pop @{$self->pages_nav($number_of_pages)} 
         if $number_of_pages || !$self->{_last_nav_page};
+        
     return $self->{_last_nav_page} if $self->{_last_nav_page};
+    
     return;    
 }
 
@@ -101,7 +104,7 @@ __END__
  
 =head1 NAME
  
-Data::Page::Nav - Module for pages pagination with pages navigation using Data::Page as base
+Data::Page::Nav - Module for pages navigation
 
 =head1 SYNOPSIS
 
@@ -145,7 +148,7 @@ Or
     
 =head1 DESCRIPTION
 
-This module simply provides methods for you to create your navigation of pages easily, using as a base the excellent module Data::Page.
+This module simply provides methods for you to create navigation of pages, using as a base the module Data::Page.
 
 =head1 METHODS
 
